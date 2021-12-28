@@ -205,5 +205,5 @@ const ResponsiveAppBar = props => {
     </AppBar>
   );
 };
-export default ResponsiveAppBar;
-//export default withRouter(ResponsiveAppBar);
+//export default ResponsiveAppBar;
+export default withRouter(ResponsiveAppBar);
