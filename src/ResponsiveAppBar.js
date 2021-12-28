@@ -11,15 +11,45 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import {makeStyles} from "@material-ui/core";
+import { Link } from "react-router-dom";
+import {useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { withRouter } from "react-router-dom";
+import App from './App';
+import MoviePage from './MoviePage';
 
 
 const pages = ['FILMY', 'RANKINGI', 'DODAJ FILM'];
 const settings = ['Profil', 'Edycja konta', 'Wyloguj'];
 
-const ResponsiveAppBar = () => {
+/*const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    [theme.breakpoints.down("xs")]: {
+      flexGrow: 1
+    }
+  },
+  headerOptions: {
+    display: "flex",
+    flex: 1,
+    justifyContent: "space-evenly"
+  }
+}));*/
+
+const ResponsiveAppBar = props => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { history } = props;
+  //const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  //const theme = useTheme();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,7 +66,35 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
-  return (
+  //const handleMenu = event => {
+  //  setAnchorEl(event.currentTarget);
+  //};
+
+  const handleMenuClick = pageURL => {
+    history.push(pageURL);
+    setAnchorEl(null);
+  };
+
+  //const handleButtonClick = pageURL => {
+  //  history.push(pageURL);
+  //};
+
+ const menuItems = [
+    {
+      menuTitle: "Home",
+      pageURL: "/"
+    },
+    {
+      menuTitle: "Contact",
+      pageURL: "/contact"
+    },
+    {
+      menuTitle: "About",
+      pageURL: "/about"
+    }
+  ];
+
+   return (
     <AppBar  style={{ background: '#000000' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -78,14 +136,16 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"
-                  style={{fontWeight: 900 }}>{page}
-                  
-                  </Typography>
-                </MenuItem>
-              ))}
+              {menuItems.map(menuItem => {
+                  const { menuTitle, pageURL } = menuItem;
+                  return (
+                    <MenuItem onClick={() => handleMenuClick(pageURL)}>
+                      <Typography textAlign="center"
+                  style={{fontWeight: 900 }}>{menuTitle}
+                  </Typography>   
+                    </MenuItem>
+                  );
+                })}
             </Menu>
           </Box>
           <Typography
@@ -146,3 +206,4 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
+//export default withRouter(ResponsiveAppBar);
