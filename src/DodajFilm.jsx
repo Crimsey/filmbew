@@ -1,7 +1,13 @@
 import React from "react";
 
-const DodajFilm = () => {
-  return <div>This is the DodajFilm page</div>;
-};
+function Dodajfilm() {
+  return (
 
-export default DodajFilm;
+    <div className="App">
+        <img alt="Plakat filmu" src="/static/images/samuraj.jpg" />
+      FILMY
+    </div>
+  );
+}
+
+export default Dodajfilm;
