@@ -1,10 +1,10 @@
 import React from "react";
-
+import img from "./static/images/samuraj.jpg";
 function Filmy() {
   return (
 
     <div className="App">
-        <img alt="Plakat filmu" src="/static/images/samuraj.jpg" />
+        <img src={img} alt="Plakat filmu"  />
       FILMY
     </div>
   );

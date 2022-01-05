@@ -4,7 +4,7 @@ function Dodajfilm() {
   return (
 
     <div className="App">
-        <img alt="Plakat filmu" src="/static/images/samuraj.jpg" />
+        <img alt="Plakat filmu" src="./static/images/samuraj.jpg" />
       FILMY
     </div>
   );

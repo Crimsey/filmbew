@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { withRouter } from "react-router-dom";
@@ -79,6 +79,12 @@ const ResponsiveAppBar = props => {
     setAnchorEl(null);
   };
 
+  const handleLogoClick =() =>{
+    let path = `/`; 
+    history.push(path);
+  };
+  
+
   //const handleButtonClick = pageURL => {
   //  history.push(pageURL);
   //};
@@ -102,7 +108,8 @@ const ResponsiveAppBar = props => {
     <AppBar style={{ background: '#000000' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+          <MenuItem>
+          <Typography onClick={handleLogoClick}
             style={{ fontWeight: 900 }}
             variant="h6"
             noWrap
@@ -111,6 +118,7 @@ const ResponsiveAppBar = props => {
           >
             FILMBEW
           </Typography>
+          </MenuItem>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -152,16 +160,18 @@ const ResponsiveAppBar = props => {
               })}
             </Menu>
           </Box>
-          <Typography
-
-            variant="h6"
-            noWrap
-            component="div"
-            style={{ fontWeight: 900 }}
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+          
+          <Typography onClick={handleLogoClick}
+           variant="h6"
+           noWrap
+           component="div"
+           style={{ fontWeight: 900 }}
+           sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            FILMBEW
+            <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }}
+        to="/"> FILMBEW</NavLink>
           </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {menuItems.map(menuItem => {
               const { menuTitle, pageURL } = menuItem;
