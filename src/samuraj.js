@@ -13,7 +13,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function samuraj() {
+export default function Samuraj() {
     return (
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
