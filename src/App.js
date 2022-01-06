@@ -4,6 +4,7 @@ import './App.css';
 import Filmy from "./Filmy";
 import Rankingi from "./Rankingi";
 import DodajFilm from "./DodajFilm";
+import samuraj from "./samuraj";
 import { Route, Switch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
+      <Route exact path="/filmy/samuraj" render={props => <samuraj {...props} />} />
         <Route exact path="/filmy" render={props => <Filmy {...props} />} />
         <Route exact path="/rankingi" render={props => <Rankingi {...props} />} />
         <Route exact path="/dodajfilm" render={props => <DodajFilm {...props} />} />
