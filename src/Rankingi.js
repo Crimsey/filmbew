@@ -1,26 +1,46 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import img from "./static/images/samuraj.jpg";
+
+const rankingStyle ={
+  height: 600, 
+  width: 1000, 
+  //display: 'table-cell', 
+  textAlign: 'center', 
+  verticalAlign: 'middle',
+  //padding: '30px',
+  //paddingLeft: '350px',
+  margin: 'auto',
+  fontWeight: 'bold'
+};
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 90 },
   {
-    field: 'firstName',
-    headerName: 'First name',
+    field: 'image',
+    headerName: 'Image',
     width: 150,
     editable: true,
+    renderCell: (params) => <img src={params.value} alt='PLAKAT' />, // renderCell will render the component
   },
   {
-    field: 'lastName',
-    headerName: 'Last name',
-    width: 150,
-    editable: true,
+    field: 'movieName',
+    headerName: 'NAZWA FILMU',
+    width: 250,
+    //editable: true,
+  },
+  {
+    field: 'datePremiere',
+    headerName: 'DATA PREMIERY',
+    width: 200,
+    //editable: true,
   },
   {
     field: 'age',
     headerName: 'Age',
     type: 'number',
     width: 110,
-    editable: true,
+    //editable: true,
   },
   {
     field: 'fullName',
@@ -29,35 +49,32 @@ const columns = [
     sortable: false,
     width: 160,
     valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+      `${params.row.movieName || ''} ${params.row.datePremiere || ''}`,
   },
 ];
 
 const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+  { id: 1, datePremiere: 'Snow', movieName: 'OSTATNI SAMURAJ', image: {img} },
+  { id: 2, datePremiere: 'Lannister', movieName: 'OJCIEC CHRZESTNY', age: 42 },
+  { id: 3, datePremiere: 'Lannister', movieName: 'MIŚ', age: 45 },
+  { id: 4, datePremiere: 'Stark', movieName: 'POTOP', age: 16 },
+  { id: 5, datePremiere: 'Targaryen', movieName: 'WYSPA PSÓW', age: null },
 ];
 
 export default function DataGridDemo() {
   return (
-    <div className='ranking' style={{ height: 400, width: '100%' }}>
+    <div className='ranking' style={rankingStyle}>
         <br></br>
         RANKING NAJLEPSZYCH FILMÓW
         <br></br>
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={5}
+        pageSize={10}
         rowsPerPageOptions={[5]}
-        checkboxSelection
+        //checkboxSelection
         disableSelectionOnClick
+        style={{fontWeight: 'bold',fontSize: '20px'}}
       />
     </div>
   );
