@@ -17,10 +17,11 @@ const rankingStyle ={
 const columns = [
   { field: 'id', headerName: 'ID', width: 90 },
   {
-    field: 'image',
-    headerName: 'Image',
+    field: 'imgenre',
+    headerName: 'PLAKAT',
     width: 150,
     editable: true,
+    generateData: () => {},
     renderCell: (params) => <img src={params.value} alt='PLAKAT' />, // renderCell will render the component
   },
   {
@@ -36,29 +37,26 @@ const columns = [
     //editable: true,
   },
   {
-    field: 'age',
-    headerName: 'Age',
+    field: 'genre',
+    headerName: 'GATUNEK',
     type: 'number',
-    width: 110,
+    width: 150,
     //editable: true,
   },
   {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
+    field: 'rate',
+    headerName: 'OCENA',
+    description: 'Ocena filmu',
     width: 160,
-    valueGetter: (params) =>
-      `${params.row.movieName || ''} ${params.row.datePremiere || ''}`,
   },
 ];
 
 const rows = [
-  { id: 1, datePremiere: 'Snow', movieName: 'OSTATNI SAMURAJ', image: {img} },
-  { id: 2, datePremiere: 'Lannister', movieName: 'OJCIEC CHRZESTNY', age: 42 },
-  { id: 3, datePremiere: 'Lannister', movieName: 'MIŚ', age: 45 },
-  { id: 4, datePremiere: 'Stark', movieName: 'POTOP', age: 16 },
-  { id: 5, datePremiere: 'Targaryen', movieName: 'WYSPA PSÓW', age: null },
+  { id: 1, datePremiere: '2003-11-12', movieName: 'OSTATNI SAMURAJ', genre: 'historyczny', rate: '4,5/5' },
+  { id: 2, datePremiere: '1972-03-15', movieName: 'OJCIEC CHRZESTNY', genre: 'gangsterski', rate: '5/5' },
+  { id: 3, datePremiere: '1981-05-04', movieName: 'MIŚ', genre: 'komedia', rate: '5/5' },
+  { id: 4, datePremiere: '1974-09-02', movieName: 'POTOP', genre: 'historyczny', rate: '5/5' },
+  { id: 5, datePremiere: '2018-02-15', movieName: 'WYSPA PSÓW', genre: 'animowany', rate: '3,5/5' },
 ];
 
 export default function DataGridDemo() {
@@ -70,8 +68,8 @@ export default function DataGridDemo() {
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[5]}
+        pgenreSize={10}
+        rowsPerPgenreOptions={[5]}
         //checkboxSelection
         disableSelectionOnClick
         style={{fontWeight: 'bold',fontSize: '20px'}}
