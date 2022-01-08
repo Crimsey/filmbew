@@ -1,19 +1,12 @@
 import react from "react";
 import Grid from "@mui/material/Grid";
-import img from "./static/images/samuraj.jpg";
+import img from "./static/images/nietykalni.jpg";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import { Typography } from "@mui/material";
-/*
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(15),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-*/
+
 const titlestyle = {
  
     textAlign: 'left',
@@ -37,7 +30,7 @@ const textstyle = {
     marginBottom: 8
   };
 
-  export default function Samuraj() {
+  export default function Nietykalni() {
     const [value, setValue] = react.useState(0); //user rating stuff
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -55,7 +48,7 @@ const textstyle = {
           </Grid>
           <Grid item xs={6} >
             <Typography variant="h2" style={titlestyle}>
-                OSTATNI SAMURAJ
+                NIETYKALNI
             </Typography>
             <Grid item xs= {8}>
             <Box sx={{display: 'grid', gap:'1', gridTemplateColumns: 'repeat(2, 1fr)', textAlign: 'left',}}>  
@@ -63,19 +56,19 @@ const textstyle = {
                     Rok produkcji 
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    2003 
+                    2011
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Tytył Oryginalny
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    The last samurai
+                   Intouchables
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
-                    Czas trwania
+                    Boxoffice
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    2 godz. 15 min.
+                    426 588 510$ (świat)
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Widzowie oceniają
@@ -95,31 +88,31 @@ const textstyle = {
                     Scenariusz 
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    Edward Zwick
+                    Olivier Nakache / Éric Toledano 
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Reżyseria 
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    Edward Zwick/John Logan
+                    Olivier Nakache / Éric Toledano 
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Gatunek 
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    Dramat artystyczny
+                    Biograficzny / Dramat / Komedia
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Produkcja  
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    USA
+                    Francja
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Premiera
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    22 Listopada 2003 (świat) 
+                    22 września 2011 (świat) 
                 </Typography>
               </Box>
               </Grid>
