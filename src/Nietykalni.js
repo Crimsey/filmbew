@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import { Typography } from "@mui/material";
+import { border, borderColor } from "@mui/system";
 
 const titlestyle = {
  
@@ -29,6 +30,11 @@ const textstyle = {
     verticalAlign: 'middle',
     marginBottom: 8
   };
+  const imgstyle = {
+      display: 'flex',
+      border: '2px solid black',
+      borderColor: 'black'
+  }
 
   export default function Nietykalni() {
     const [value, setValue] = react.useState(0); //user rating stuff
@@ -36,8 +42,8 @@ const textstyle = {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2} sx={{ mt: 2}}>
           <Grid item  xs={4}>
-          <Box  container sx={{ display: 'grid', ml:2}}>
-            <img src={img} />
+          <Box  container sx={{ display: 'grid', ml:3 }}>
+                <img src={img} style={imgstyle} />
                 <Button variant="outlined" sx={{mt:2}} >
                    Wyświetl plakaty
                 </Button>

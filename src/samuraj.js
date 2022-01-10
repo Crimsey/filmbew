@@ -37,6 +37,11 @@ const textstyle = {
     marginBottom: 8
   };
 
+  const imgstyle = {
+    display: 'flex',
+    border: '2px solid black',
+    borderColor: 'black'
+}
   export default function Samuraj() {
     const [value, setValue] = react.useState(0); //user rating stuff
     return (
@@ -44,7 +49,7 @@ const textstyle = {
         <Grid container spacing={2} sx={{ mt: 2}}>
           <Grid item  xs={4}>
           <Box  container sx={{ display: 'grid', ml:2}}>
-            <img src={img} />
+            <img src={img} style={imgstyle} />
                 <Button variant="outlined" sx={{mt:2}} >
                    Wyświetl plakaty
                 </Button>
