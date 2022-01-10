@@ -183,7 +183,7 @@ const ResponsiveAppBar = props => {
                 </MenuItem>
               );
             })}
-
+            <div style={{backgroundColor: 'whitesmoke'}}>
             <Autocomplete
             // renderOption={(props, option) => {
             //   const { title, color } = option;
@@ -202,6 +202,7 @@ const ResponsiveAppBar = props => {
               
             }
             />
+            </div>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
