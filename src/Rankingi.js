@@ -23,7 +23,7 @@ const columns = [
     border: 3,
     //editable: true,
     generateData: () => {},
-    renderCell: (params) => <img src={params.value} alt='PLAKAT' />, // renderCell will render the component
+    renderCell: (params) => <img src={params.image} alt={params.image} />, // renderCell will render the component
   },
   {
     field: 'movieName',
@@ -57,7 +57,7 @@ const columns = [
     width: 160,
   },
 ];
-
+debugger;
 const rows = [
   { id: 1, datePremiere: '2003-11-12', movieName: 'OSTATNI SAMURAJ', genre: 'historyczny', rate: '4,5/5', directorName: 'E. Zwick', image: './static/images/samuraj.jpg'  },
   { id: 2, datePremiere: '1972-03-15', movieName: 'OJCIEC CHRZESTNY', genre: 'gangsterski', rate: '5/5',directorName: 'F.F. Coppola' },
@@ -67,6 +67,7 @@ const rows = [
 ];
 
 export default function DataGridDemo() {
+  debugger;
   return (
     <div className='ranking' style={rankingStyle}>
         <br></br>

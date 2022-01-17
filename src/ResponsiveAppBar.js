@@ -198,7 +198,7 @@ const ResponsiveAppBar = props => {
               options={top100Films}
               sx={{ width: 300 }}
               inputProps={{ style: { width: '100%',height: '100px', backgroundColor: 'red'}, placeholder: 'test'}}  
-              renderInput={(params) => <TextField {...params} label="Movie" />
+              renderInput={(params) => <TextField {...params} label="Wyszukaj film" />
               
             }
             />

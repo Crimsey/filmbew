@@ -59,6 +59,7 @@ function Dodajfilm() {
                       placeholder="Tytuł w oryginalnym języku"
                     /></td>
                   <td><Button variant="contained">ZWERYFIKUJ</Button></td>
+                  <span style={{fontSize:'100px'}}>&#8680;</span>
                 </tr>
                 <tr>
                   <td>
@@ -92,7 +93,7 @@ function Dodajfilm() {
               <Button variant="contained" style={{position: 'relative', left: '1010px', bottom: '45px'}}>DODAJ FILM</Button>
             </div>
           </Grid>
-          <Grid item xs={6} style={{ paddingRight: '250px', paddingTop: '100px' }}>
+          <Grid item xs={6} style={{ paddingRight: '250px', paddingTop: '200px' }}>
             <label style={{ fontSize: '30px' }}>Zweryfikuj film w celu, potwierdzenia iż nie znajduje się już w bazie.</label>
           </Grid>
         </Grid>
