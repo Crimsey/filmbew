@@ -24,6 +24,20 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
 
+const styles = theme => ({
+  textField: {
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingBottom: 0,
+    marginTop: 0,
+    fontWeight: 500
+  },
+  input: {
+    color: 'white'
+  }
+});
+
 const pages = ['FILMY', 'RANKINGI', 'DODAJ FILM'];
 const settings = ['Profil', 'Edycja konta', 'Wyloguj'];
 
@@ -79,11 +93,11 @@ const ResponsiveAppBar = props => {
     setAnchorEl(null);
   };
 
-  const handleLogoClick =() =>{
-    let path = `/`; 
+  const handleLogoClick = () => {
+    let path = `/`;
     history.push(path);
   };
-  
+
 
   //const handleButtonClick = pageURL => {
   //  history.push(pageURL);
@@ -109,15 +123,15 @@ const ResponsiveAppBar = props => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <MenuItem>
-          <Typography onClick={handleLogoClick}
-            style={{ fontWeight: 900 }}
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            FILMBEW
-          </Typography>
+            <Typography onClick={handleLogoClick}
+              style={{ fontWeight: 900 }}
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            >
+              FILMBEW
+            </Typography>
           </MenuItem>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -160,18 +174,18 @@ const ResponsiveAppBar = props => {
               })}
             </Menu>
           </Box>
-          
+
           <Typography onClick={handleLogoClick}
-           variant="h6"
-           noWrap
-           component="div"
-           style={{ fontWeight: 900 }}
-           sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            variant="h6"
+            noWrap
+            component="div"
+            style={{ fontWeight: 900 }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }}
-        to="/"> FILMBEW</NavLink>
+              to="/"> FILMBEW</NavLink>
           </Typography>
-          
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {menuItems.map(menuItem => {
               const { menuTitle, pageURL } = menuItem;
@@ -183,25 +197,27 @@ const ResponsiveAppBar = props => {
                 </MenuItem>
               );
             })}
-            <div style={{backgroundColor: 'whitesmoke'}}>
-            <Autocomplete
-            // renderOption={(props, option) => {
-            //   const { title, color } = option;
-            //   return (
-            //     <span {...props} style={{ backgroundColor: 'red' }}>
-            //       {title}
-            //     </span>
-            //   );
-            // }}
-              disablePortal
-              id="combo-box-demo"
-              options={top100Films}
-              sx={{ width: 300 }}
-              inputProps={{ style: { width: '100%',height: '100px', backgroundColor: 'red'}, placeholder: 'test'}}  
-              renderInput={(params) => <TextField {...params} label="Wyszukaj film" />
-              
-            }
-            />
+            <div style={{ backgroundColor: 'whitesmoke' }}>
+              <Autocomplete
+                // renderOption={(props, option) => {
+                //   const { title, color } = option;
+                //   return (
+                //     <span {...props} style={{ backgroundColor: 'red' }}>
+                //       {title}
+                //     </span>
+                //   );
+                // }}
+                disablePortal
+                id="combo-box-demo"
+                options={top100Films}
+                sx={{ width: 300 }}
+                inputProps={{ style: { width: '100%', height: '100px', backgroundColor: 'red' }, placeholder: 'test' }}
+                renderInput={(params) => <TextField {...params} label="Wyszukaj film"
+                
+                />
+
+                }
+              />
             </div>
           </Box>
 

@@ -38,6 +38,10 @@ const imgstyle = {
     width: '400px',
     height: '500px'
 }
+const btnstyle={
+    width:'50%',
+    fontsize: 5
+ }
 
 export default function Nietykalni() {
     const [value, setValue] = react.useState(0); //user rating stuff
@@ -95,12 +99,9 @@ export default function Nietykalni() {
                                 precision={0.5} size="large">
                             </Rating>
                             <p></p>
-                            <Button variant="outlined" startIcon={<DeleteIcon />} style={{marginBottom: '1px'}}
-                            onClick={(event, newValue) => {
+                            <Button onClick={(event, newValue) => {
                                 setValue(0);
-                            }}>
-                                Usuń ocenę
-                            </Button>
+                            }} variant="outlined"  style={btnstyle} size="small" startIcon={<DeleteIcon/>} >Usuń ocenę</Button>
                             <Typography variant="h5" style={textstyle}>
                                 Scenariusz
                             </Typography>
@@ -131,6 +132,14 @@ export default function Nietykalni() {
                             <Typography variant="h5" style={secondtextstyle}>
                                 22 września 2011 (świat)
                             </Typography>
+                            <Typography style={{color: 'white'}}> ------------------------</Typography>
+                
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+                
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+              <Typography variant="h5" style={textstyle} >Recenzje użytkowników (3)</Typography>
+                <Button variant="outlined" size="small" style={btnstyle} >dodaj recenzję</Button>
                         </Box>
                     </Grid>
                 </Grid>

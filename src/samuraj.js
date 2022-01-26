@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import { Typography } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 /*
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -44,6 +45,10 @@ const textstyle = {
     width: '400px', 
     height: '500px'
 }
+ const btnstyle={
+    width:'50%',
+    fontsize: 5
+ }
   export default function Samuraj() {
     const [value, setValue] = react.useState(0); //user rating stuff
     return (
@@ -52,10 +57,10 @@ const textstyle = {
           <Grid item  xs={4}>
           <Box  container sx={{ display: 'grid', ml:2}}>
             <img src={img} style={imgstyle} />
-                <Button variant="outlined" sx={{mt:2}} style={{width: '85%'}} >
+                <Button variant="outlined" sx={{mt:2}} style={{width: '70%'}} >
                    Wyświetl plakaty
                 </Button>
-                <Button variant="outlined" sx={{mt:2}} style={{width: '85%'}} >
+                <Button variant="outlined" sx={{mt:2}} style={{width: '70%'}} >
                    Obejrzyj zwiastuny
                 </Button>
             </Box>
@@ -98,6 +103,10 @@ const textstyle = {
                             setValue(newValue);}} 
                      precision={0.5} size="large">
                 </Rating>
+                <Typography ></Typography>
+                <Button onClick={(event, newValue) => {
+                                setValue(0);
+                            }} variant="outlined"  style={btnstyle} size="small" startIcon={<DeleteIcon/>} >Usuń ocenę</Button>
                 <Typography variant="h5" style={textstyle}>
                     Scenariusz 
                 </Typography>
@@ -128,11 +137,25 @@ const textstyle = {
                 <Typography variant="h5" style={secondtextstyle}>
                     22 Listopada 2003 (świat) 
                 </Typography>
-              </Box>
+               
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+                
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+                
+                <Typography style={{color: 'white'}}> ------------------------</Typography>
+              <Typography variant="h5" style={textstyle} >Recenzje użytkowników (3)</Typography>
+                <Button variant="outlined" size="small" style={btnstyle} >dodaj recenzję</Button>
+              
+                  </Box>
+              
               </Grid>
+              
           </Grid>
          
+          
         </Grid>
+        
       </Box>
     );
 }
