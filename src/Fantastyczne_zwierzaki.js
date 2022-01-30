@@ -1,6 +1,6 @@
 import react from "react";
 import Grid from "@mui/material/Grid";
-import img from "./static/images/nietykalni.jpg";
+import Dumbledore from "./static/images/tajemnice_Dumbledorea.jpg";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -43,14 +43,14 @@ const btnstyle={
     fontsize: 5
  }
 
-export default function Nietykalni() {
+export default function Fantastyczne_zwierzaki() {
     const [value, setValue] = react.useState(0); //user rating stuff
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2} sx={{ mt: 2 }}>
                 <Grid item xs={4}>
                     <Box container sx={{ display: 'grid', ml: 3 }}>
-                        <img src={img} style={imgstyle} />
+                        <img src={Dumbledore} style={imgstyle} />
                         <Button variant="outlined" sx={{ mt: 2 }} style={{ width: '70%' }} >
                             Wyświetl plakaty
                         </Button>
@@ -61,7 +61,7 @@ export default function Nietykalni() {
                 </Grid>
                 <Grid item xs={6} >
                     <Typography variant="h2" style={titlestyle}>
-                        NIETYKALNI
+                        FANTASTYCZNE ZWIERZĘTA: TAJEMNICE DUMBLEDORE'A
                     </Typography>
                     <Grid item xs={8}>
                         <Box sx={{ display: 'grid', gap: '1', gridTemplateColumns: 'repeat(2, 1fr)', textAlign: 'left', }}>
@@ -69,26 +69,21 @@ export default function Nietykalni() {
                                 Rok produkcji
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                2011
+                                2022
                             </Typography>
                             <Typography variant="h5" style={textstyle}>
                                 Tytył Oryginalny
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                Intouchables
+                                Fantastic Beasts: The Secrets of Dubledore
                             </Typography>
-                            <Typography variant="h5" style={textstyle}>
-                                Boxoffice
-                            </Typography>
-                            <Typography variant="h5" style={secondtextstyle}>
-                                426 588 510$ (świat)
-                            </Typography>
+                            
                             <Typography variant="h5" style={textstyle}>
                                 Widzowie oceniają
                             </Typography>
-                            <Rating name="viewersRate" value={4.5} precision={0.5} readOnly size="large">
-
-                            </Rating>
+                            <Rating name="viewersRate" value={0} precision={0.5} readOnly size="large">
+                            
+                            </Rating>                            
                             <Typography variant="h5" style={textstyle}>
                                 Twoja ocena
                             </Typography>
@@ -106,31 +101,31 @@ export default function Nietykalni() {
                                 Scenariusz
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                Olivier Nakache / Éric Toledano
+                                J.K Rowling / Steve Kloves 
                             </Typography>
                             <Typography variant="h5" style={textstyle}>
                                 Reżyseria
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                Olivier Nakache / Éric Toledano
+                                David Yates
                             </Typography>
                             <Typography variant="h5" style={textstyle}>
                                 Gatunek
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                Biograficzny / Dramat / Komedia
+                                Familijny / Fantasy / Przygodowy
                             </Typography>
                             <Typography variant="h5" style={textstyle}>
                                 Produkcja
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                Francja
+                                USA / Wielka Brytania
                             </Typography>
                             <Typography variant="h5" style={textstyle}>
                                 Premiera
                             </Typography>
                             <Typography variant="h5" style={secondtextstyle}>
-                                22 września 2011 (świat)
+                                7 kwietnia 2022 (Polska)
                             </Typography>
                             <Typography style={{color: 'white'}}> ------------------------</Typography>
                 
@@ -138,7 +133,7 @@ export default function Nietykalni() {
                 <Typography style={{color: 'white'}}> ------------------------</Typography>
                 
                 <Typography style={{color: 'white'}}> ------------------------</Typography>
-              <Typography variant="h5" style={textstyle} >Recenzje użytkowników (3)</Typography>
+              <Typography variant="h5" style={textstyle} >Recenzje użytkowników (6)</Typography>
                 <Button variant="outlined" size="small" style={btnstyle} >dodaj recenzję</Button>
                         </Box>
                     </Grid>
@@ -148,4 +143,3 @@ export default function Nietykalni() {
         </Box>
     );
 }
-
