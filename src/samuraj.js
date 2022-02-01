@@ -7,6 +7,12 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import { Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import Chip from '@mui/material/Chip';
+import Music from './Music';
+
+import SamurajObejrzyjZwiastuny from './SamurajNagrody';
+import SamurajWyswietlPlakaty from './SamurajWyswietlPlakaty';
+
 /*
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -28,7 +34,8 @@ const textstyle = {
     textAlign: 'left',
     verticalAlign: 'middle',
     fontWeight: 600,
-    marginBottom: 8
+    marginBottom: 8,
+    display: 'table-cell'
   };
  
   const secondtextstyle = {
@@ -43,7 +50,8 @@ const textstyle = {
     border: '2px solid black',
     borderColor: 'black',
     width: '400px', 
-    height: '500px'
+    height: '500px',
+    borderRadius: '3%'
 }
  const btnstyle={
     width:'50%',
@@ -53,9 +61,9 @@ const textstyle = {
     const [value, setValue] = react.useState(0); //user rating stuff
     return (
         <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2} sx={{ mt: 2}}>
-          <Grid item  xs={4}>
-          <Box  container sx={{ display: 'grid', ml:2}}>
+        <Grid container spacing={1} sx={{ mt: 2}}>
+          <Grid item  xs={3}>
+          <Box  container sx={{ display: 'grid', ml:3}}>
             <img src={img} style={imgstyle} />
                 <Button variant="outlined" sx={{mt:2}} style={{width: '70%'}} >
                    Wyświetl plakaty
@@ -65,12 +73,19 @@ const textstyle = {
                 </Button>
             </Box>
           </Grid>
-          <Grid item xs={6} >
+          <Grid item xs={6}>
+                <Typography variant="h5" style={textstyle}>
+                    Sekcja gatunków:  
+                    <Chip label="Historyczny" style={{background: 'lightblue', fontSize: '16px', marginLeft: '1em'}} />
+                    <Chip label="Dramat" style={{background: 'lightblue', fontSize: '16px', marginLeft: '1em'}} />
+                    <Chip label="Historia Japonii" style={{background: 'lightblue', fontSize: '16px', marginLeft: '1em'}} />
+                </Typography>
+                
             <Typography variant="h2" style={titlestyle}>
                 OSTATNI SAMURAJ
             </Typography>
-            <Grid item xs= {8}>
-            <Box sx={{display: 'grid', gap:'1', gridTemplateColumns: 'repeat(2, 1fr)', textAlign: 'left',}}>  
+            <Grid item xs= {8} >
+            <Box sx={{display: 'grid', gap:'1', gridTemplateColumns: 'repeat(2, 1fr)', textAlign: 'left'}}>  
                 <Typography variant="h5" style={textstyle}>
                     Rok produkcji 
                 </Typography>
@@ -78,10 +93,10 @@ const textstyle = {
                     2003 
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
-                    Tytył Oryginalny
+                    Tytuł Oryginalny
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
-                    The last samurai
+                    The Last Samurai
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
                     Czas trwania
@@ -120,12 +135,6 @@ const textstyle = {
                     Edward Zwick/John Logan
                 </Typography>
                 <Typography variant="h5" style={textstyle}>
-                    Gatunek 
-                </Typography>
-                <Typography variant="h5" style={secondtextstyle}>
-                    Dramat artystyczny
-                </Typography>
-                <Typography variant="h5" style={textstyle}>
                     Produkcja  
                 </Typography>
                 <Typography variant="h5" style={secondtextstyle}>
@@ -153,8 +162,14 @@ const textstyle = {
               
           </Grid>
          
-          
+          <Grid item xs= {2}>
+              <SamurajObejrzyjZwiastuny></SamurajObejrzyjZwiastuny>
+              <br></br>
+              <br></br><br></br>
+              <Music></Music>  
+              </Grid>
         </Grid>
+        
         
       </Box>
     );
