@@ -129,7 +129,6 @@ const rows = [
 ];
 
 export default function DataGridDemo() {
-  //debugger;
   return (
     <div className='ranking' style={rankingStyle}>
       <Grid container spacing={2}>

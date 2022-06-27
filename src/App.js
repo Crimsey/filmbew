@@ -5,6 +5,7 @@ import Filmy from "./Filmy";
 import Rankingi from "./Rankingi";
 import DodajFilm from "./DodajFilm";
 import Samuraj from "./Samuraj";
+import SignInSignUp from "./SignInSignUp";
 import { Route, Switch } from "react-router-dom";
 import Nietykalni from "./Nietykalni";
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,6 +22,8 @@ function App() {
         <Route exact path="/filmy" render={props => <Filmy {...props} />} />
         <Route exact path="/rankingi" render={props => <Rankingi {...props} />} />
         <Route exact path="/dodajfilm" render={props => <DodajFilm {...props} />} />
+        <Route exact path="/glownypanel" render={props => <SignInSignUp {...props} />} />
+
       </Switch>
     </div>
   );
